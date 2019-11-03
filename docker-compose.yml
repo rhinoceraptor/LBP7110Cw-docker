@@ -3,7 +3,17 @@ services:
   cups:
     build: .
     hostname: cups
+    network_mode: host
+    privileged: true
     environment:
-      CUPS_PASSWORD: cups
-    ports:
-      - "631:631"
+      TZ: UTC
+      HOST_OS: ubuntu
+      CUPS_USER_ADMIN: cups
+      CUPS_USER_PASSWORD: cups
+      TCP_PORT_631: 631
+    volumes:
+      - /mnt/user/appdata/cups-google-print:/config
+      - /dev:/dev
+      - /etc/avahi/services:/avahi
+      - /var/run/dbus:/var/run/dbus
+
