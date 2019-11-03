@@ -11,6 +11,7 @@ $ sudo git clone https://github.com/rhinoceraptor/LBP7110Cw-docker.git /opt/LBP7
 $ cd /opt/LBP7110Cw-docker
 # Edit the username/password in docker-compose.yml
 $ docker-compose -f docker-compose.yml build
+# Change the username in cups-docker.service to your user
 $ sudo cp cups-docker.service /etc/systemd/system/
 $ sudo systemctl enable cups-docker && sudo systemctl start cups-docker
 ```
