@@ -1,0 +1,9 @@
+version: '3'
+services:
+  cups:
+    build: .
+    hostname: cups
+    environment:
+      CUPS_PASSWORD: cups
+    ports:
+      - "631:631"
